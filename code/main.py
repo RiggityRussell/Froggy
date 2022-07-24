@@ -6,6 +6,7 @@ class Game: #the game class which holds the main information to run the game.
 
         pygame.init() #initializing pygame
         self.screen = pygame.display.set_mode((WIDTH,HEIGHT))
+        pygame.display.set_caption("Froggy")
         self.clock = pygame.time.Clock()
     
     def run(self):

@@ -1,5 +1,6 @@
 import pygame, sys #importing pygame to run our game, and system commands
 from settings import * #importing our settings we create for the game
+from level import Level
 
 class Game: #the game class which holds the main information to run the game.
     def __init__(self): #defining the game class
@@ -8,6 +9,8 @@ class Game: #the game class which holds the main information to run the game.
         self.screen = pygame.display.set_mode((WIDTH,HEIGHT))
         pygame.display.set_caption("Froggy")
         self.clock = pygame.time.Clock()
+
+        self.level = Level()
     
     def run(self):
         while True:
@@ -17,6 +20,7 @@ class Game: #the game class which holds the main information to run the game.
                     sys.exit()
 
             self.screen.fill('black')
+            self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)
 
